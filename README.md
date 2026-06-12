@@ -1,120 +1,175 @@
-# DomaAssist - Wear OS
+# ⌚ DomaAssist - Wear OS
 
-## Descrição
+<p align="center">
+  <img src="https://img.shields.io/badge/Wear%20OS-Android-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Android%20Studio-Development-blue?style=for-the-badge" />
+</p>
 
-O DomaAssist é um aplicativo desenvolvido para Wear OS como atividade prática da disciplina **DGT2816 – Interação com Sensores de Smartphones e Wearables**.
+## 📖 Sobre o Projeto
 
-O objetivo do projeto é demonstrar a utilização de recursos de áudio e Bluetooth em dispositivos vestíveis (Wear OS), permitindo verificar saídas de áudio disponíveis, acessar as configurações Bluetooth e reproduzir alertas sonoros.
+O **DomaAssist** é um aplicativo desenvolvido para **Wear OS** como atividade prática da disciplina **DGT2816 – Interação com Sensores de Smartphones e Wearables**.
+
+O projeto tem como objetivo demonstrar a utilização de recursos de **áudio**, **Bluetooth** e interação com hardware em dispositivos vestíveis, explorando conceitos fundamentais do desenvolvimento para Wear OS.
 
 ---
 
-## Funcionalidades
+## 🎯 Objetivo
 
-### Verificar Áudio
+O aplicativo permite:
 
-Permite verificar a disponibilidade de dispositivos de saída de áudio no wearable.
+✅ Verificar dispositivos de saída de áudio disponíveis
 
-O aplicativo identifica:
+✅ Monitorar o estado do Bluetooth
+
+✅ Abrir diretamente as configurações Bluetooth do sistema
+
+✅ Reproduzir alertas sonoros locais
+
+✅ Detectar alterações em dispositivos de áudio conectados
+
+---
+
+## 🚀 Funcionalidades
+
+### 🔊 Verificar Áudio
+
+Permite identificar dispositivos de saída de áudio disponíveis no wearable.
+
+Informações verificadas:
 
 * Alto-falante interno (Built-in Speaker)
-* Estado do Bluetooth
+* Estado atual do Bluetooth
 
-As informações são exibidas diretamente na interface do aplicativo.
+Exemplo:
+
+```text
+Alto-falante: true
+Bluetooth: true
+```
 
 ---
 
-### Abrir Bluetooth
+### 📶 Abrir Bluetooth
 
-Abre a tela de configurações Bluetooth do Wear OS.
+Abre diretamente as configurações Bluetooth do Wear OS.
 
-O usuário pode:
+Possibilidades:
 
 * Ativar Bluetooth
 * Desativar Bluetooth
-* Gerenciar conexões Bluetooth
+* Gerenciar dispositivos conectados
+* Parear novos dispositivos
 
-Ao retornar para o aplicativo, o status é atualizado automaticamente.
+Ao retornar ao aplicativo, o status é atualizado automaticamente.
 
 ---
 
-### Reproduzir Alerta
+### 🚨 Reproduzir Alerta
 
-Reproduz um arquivo de áudio armazenado localmente no aplicativo.
+Reproduz um arquivo de áudio local (`alerta.mp3`) para demonstrar a utilização de recursos sonoros em dispositivos Wear OS.
 
-Esta funcionalidade simula alertas sonoros que podem ser utilizados para:
+Exemplos de aplicação:
 
+* Alarmes
 * Notificações
 * Avisos importantes
-* Alarmes
 * Assistência ao usuário
 
 ---
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
-* Java
-* Android Studio
-* Wear OS
-* AudioManager
-* AudioDeviceInfo
-* AudioDeviceCallback
-* MediaPlayer
+| Tecnologia          | Utilização                    |
+| ------------------- | ----------------------------- |
+| Java                | Desenvolvimento da aplicação  |
+| Android Studio      | Ambiente de desenvolvimento   |
+| Wear OS             | Plataforma wearable           |
+| AudioManager        | Gerenciamento de áudio        |
+| AudioDeviceInfo     | Identificação de dispositivos |
+| AudioDeviceCallback | Monitoramento dinâmico        |
+| MediaPlayer         | Reprodução de áudio           |
 
 ---
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
-### MainActivity
+```text
+app/
+├── java/com.domaassist
+│   ├── MainActivity.java
+│   └── AudioHelper.java
+│
+├── res
+│   ├── layout
+│   │   └── activity_main.xml
+│   │
+│   ├── raw
+│   │   └── alerta.mp3
+│   │
+│   └── values
+│       └── strings.xml
+│
+└── AndroidManifest.xml
+```
 
-Responsável pela interface principal e pelas interações do usuário.
+### 📌 Componentes
 
-### AudioHelper
+#### MainActivity
 
-Classe auxiliar responsável por identificar dispositivos de saída de áudio disponíveis.
+Responsável pela interface principal e pelas ações do usuário.
 
-### activity_main.xml
+#### AudioHelper
+
+Classe responsável pela detecção de dispositivos de saída de áudio.
+
+#### activity_main.xml
 
 Layout principal do aplicativo.
 
-### alerta.mp3
+#### alerta.mp3
 
-Arquivo de áudio utilizado para demonstração da reprodução sonora.
+Arquivo utilizado para demonstração da reprodução sonora.
 
 ---
 
-## Como Executar
+## ▶️ Como Executar
 
 ### Pré-requisitos
 
 * Android Studio
 * SDK Wear OS
-* Emulador Wear OS ou dispositivo físico compatível
+* Emulador Wear OS ou smartwatch compatível
 
-### Passos
+### Instalação
 
-1. Clone o repositório:
+Clone o repositório:
 
 ```bash
 git clone URL_DO_REPOSITORIO
 ```
 
-2. Abra o projeto no Android Studio.
+Abra o projeto no Android Studio:
 
-3. Aguarde o Gradle sincronizar.
+```text
+File → Open
+```
 
-4. Inicie um emulador Wear OS.
+Aguarde o Gradle sincronizar.
 
-5. Execute o projeto clicando em Run.
+Execute o aplicativo em:
+
+* Emulador Wear OS
+* Dispositivo físico compatível
 
 ---
 
-## Como Testar
+## 🧪 Testes Realizados
 
-### Teste 1 - Verificação de Áudio
+### Teste 1 — Verificação de Áudio
 
-1. Abra o aplicativo.
-2. Clique em "VERIFICAR ÁUDIO".
-3. Verifique as informações exibidas na tela.
+1. Abrir o aplicativo
+2. Pressionar "VERIFICAR ÁUDIO"
 
 Resultado esperado:
 
@@ -125,38 +180,49 @@ Bluetooth: true/false
 
 ---
 
-### Teste 2 - Bluetooth
+### Teste 2 — Bluetooth
 
-1. Clique em "ABRIR BLUETOOTH".
-2. Ative ou desative o Bluetooth.
-3. Retorne ao aplicativo.
-
-Resultado esperado:
-
-O status do Bluetooth deve ser atualizado automaticamente.
-
----
-
-### Teste 3 - Reprodução de Alerta
-
-1. Clique em "REPRODUZIR ALERTA".
+1. Pressionar "ABRIR BLUETOOTH"
+2. Alterar o estado do Bluetooth
+3. Retornar ao aplicativo
 
 Resultado esperado:
 
-O arquivo de áudio deve ser reproduzido pelo dispositivo.
+```text
+Status atualizado automaticamente
+```
 
 ---
 
-## Objetivo Acadêmico
+### Teste 3 — Reprodução de Áudio
 
-Este projeto foi desenvolvido como requisito da disciplina:
+1. Pressionar "REPRODUZIR ALERTA"
 
-**DGT2816 – Interação com Sensores de Smartphones e Wearables**
+Resultado esperado:
 
-Demonstrando o uso de recursos de áudio, Bluetooth e interação com dispositivos Wear OS.
+```text
+Reprodução do arquivo alerta.mp3
+```
 
 ---
 
-## Autor
+## 🎓 Contexto Acadêmico
 
-Edson Victor
+Este projeto foi desenvolvido como requisito avaliativo da disciplina:
+
+### DGT2816 — Interação com Sensores de Smartphones e Wearables
+
+O trabalho demonstra a utilização prática de APIs do Android voltadas para:
+
+* Áudio
+* Bluetooth
+* Wearables
+* Interação com hardware
+
+---
+
+## 👨‍💻 Autor
+
+**Edson Victor**
+
+Projeto desenvolvido para fins acadêmicos utilizando Android Studio e Wear OS.
