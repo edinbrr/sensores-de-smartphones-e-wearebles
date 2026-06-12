@@ -223,6 +223,6 @@ O trabalho demonstra a utilização prática de APIs do Android voltadas para:
 
 ## 👨‍💻 Autor
 
-**Edson Victor**
+**Edson Victor Miranda de Oliveira**
 
 Projeto desenvolvido para fins acadêmicos utilizando Android Studio e Wear OS.
